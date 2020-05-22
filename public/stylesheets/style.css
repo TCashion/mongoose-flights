@@ -1,6 +1,12 @@
+:root {
+  /* color scheme created on https://color.adobe.com/create/color-wheel */
+  --main-color:#e5f5fc;
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: var(--main-color);
 }
 
 a {
