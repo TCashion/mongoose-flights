@@ -1,6 +1,8 @@
 :root {
   /* color scheme created on https://color.adobe.com/create/color-wheel */
+  --main-minus-one:#C5D3E6; 
   --main-color:#e5f5fc;
+  --main-plus-one:#C5E4E6; 
 }
 
 body {
