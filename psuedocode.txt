@@ -121,6 +121,27 @@ AAU, when viewing the details page (show view) for a flight, I want to be able t
 
 
 
+option for time: 
+
+
+departs: {
+  type: Date,
+  default: function () {
+    const dt = new Date();
+    return dt.setFullYear(dt.getFullYear() + 1);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 Mothballed time parser: 
 
 function parseDate(flight) {

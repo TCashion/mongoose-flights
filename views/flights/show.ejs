@@ -19,7 +19,10 @@
     <div class="card-body">
         <h5 class="card-title">Add Destination:</h5>
         <form class="form-group" action="POST">
-            <input type="text" class="form-control" id="add-destination" name="destinations" placeholder="EX: DEN">
+            <label for="add-airport-form">Destination airport:</label>
+            <input type="text" class="form-control add-destination" id="add-airport-form" name="destination" placeholder="EX: DEN">
+            <label for="add-time-form">Expected Arrival:</label>
+            <input type="datetime-local" class="form-control add-destination"  id="add-time-form" name="arrival" placeholder="EX: DEN">
             <button type="submit" class="btn btn-secondary">Submit</button>
         </form>
     </div>
