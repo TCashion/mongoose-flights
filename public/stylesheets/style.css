@@ -35,3 +35,20 @@ a {
   background-color: #e5f5fc;
   border-color: var(--main-minus-two) var(--main-minus-two) var(--main-color);
 }
+
+.btn-secondary {
+  background-color: var(--main-plus-one);
+}
+
+.spaced-li {
+  margin: 10px; 
+}
+
+.card {
+  margin: 0 auto; 
+}
+
+thead {
+  background: var(--main-plus-one);
+  color: var(--main-minus-one);
+}

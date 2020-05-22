@@ -5,7 +5,8 @@ const Flight = require('../models/flight');
 module.exports = {
     index, 
     new: newFlight, 
-    create
+    create, 
+    show
 };
 
 // set up index view
@@ -39,5 +40,16 @@ function create(req, res) {
         // returns to new form if data not valid 
         if (err) return res.redirect('/flights/new');
         res.redirect('/flights');
+    });
+};
+
+// show details page
+function show(req, res) {
+    Flight.findById(req.params.id, function(err, flight) {
+        console.log(flight)
+        res.render('flights/show', {
+            flight, 
+            title: "Details"
+        });
     });
 };
