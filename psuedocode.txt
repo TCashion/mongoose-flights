@@ -20,96 +20,54 @@ When we build out CRUD functionality in most web apps, here is the process we wi
 
 
 
+done 1 Create a destinationSchema that will provide the structure for destination subdocuments that will be embedded:
+
+    DONE
+
+
+DONE 2 Add the following additional property to the Flight Model:
+
+
+
+3 Implement the following User Story:
+AAU, when viewing the list of flights, I want to click on a "detail" link displayed next to each flight to view all of the properties for that flight (show view), including each of its destinations.
+
+
+
+4 Implement the following User Story:
+AAU, when viewing the details page (show view) for a flight, I want to see a list of that flight's destinations (airport & arrival)
+
+
+
+
+5 Implement the following User Story:
+AAU, when viewing the details page (show view) for a flight, I want to be able to add a destination for that flight. Each destination, as defined by the schema above, includes an arrival date/time & one of the established airport codes._
+Note: Multiple destinations are possible by adding them one at a time.
+
+Hints:
+
+Display a form below the list of destinations.
+
+
+
+
+Bonuses
+6 Sort the list of destinations for a flight by the arrival date/time in ascending order.
+
+7 Implement the following User Story:
+AAU, when viewing the details page (show view) for a flight, I want to be able to delete any current destination for that flight.
+
+ 8 When adding a destination for a flight, exclude the airports listed in the <select> that have already been used by other destinations and/or the flight's airport.
 
 
 
 
 
-DONE AAU, I want to view a list of all flights (index view) that displays each flight's airline, airport, flight no., and departure date/time.
 
 
 
-    1. Determine the "proper" route (HTTP Method & Endpoint). 
-        GET /flights
-    2. Add the UI (link and/or form) that will trigger the HTTP request that matches the route.
-        - From root route, add link that gets to flights/index.ejs
-    3. Define the route in the appropriate router module that will match the HTTP request and map it to the <controller>.<method> that will perform the desired functionality.
-        router.get('/flights/index', ... )
-    4. Add the controller action/method and be sure to export it.
-
-    5. In the controller, perform necessary CRUD and either render (passing it data) in the case of a GET request, or redirect if data has been mutated (POST, PUT & DELETE). If rendering, code the view template if necessary.
 
 
-
-AAU, I want to create flights by entering the information on a page (new view) that has a form and submitting it.
-
-    2 step request: 
-        DONE 1st step: 
-                
-            1. Determine the "proper" route (HTTP Method & Endpoint). 
-
-                GET /flights/new
-
-            2. Add the UI (link and/or form) that will trigger the HTTP request that matches the route.
-
-                link in the index view that navigates to: 
-                views/flights/new.ejs
-
-            3. Define the route in the appropriate router module that will match the HTTP request and map it to the <controller>.<method> that will perform the desired functionality.
-
-                router.get('/new', flightsCtrl.new);
-
-            4. Add the controller action/method and be sure to export it.
-            5. In the controller, perform necessary CRUD and either render (passing it data) in the case of a GET request, or redirect if data has been mutated (POST, PUT & DELETE). If rendering, code the view template if necessary.
-
-        2nd step: 
-
-            Done 1. Determine the "proper" route (HTTP Method & Endpoint). 
-
-                POST /flights
-
-            Done 2. Add the UI (link and/or form) that will trigger the HTTP request that matches the route.
-
-                submit form on new.ejs view
-
-            Done 3. Define the route in the appropriate router module that will match the HTTP request and map it to the <controller>.<method> that will perform the desired functionality.
-
-                router.post('/', flightsCtrl.create);
-
-            DONE 4. Add the controller action/method and be sure to export it.
-
-                function create(... )
-
-            DONE 5. In the controller, perform necessary CRUD and either render (passing it data) in the case of a GET request, or redirect if data has been mutated (POST, PUT & DELETE). If rendering, code the view template if necessary.
-
-                redirect
-
-
-AAU, I want to be able to access each view via a navigation bar at the top of the page with links to: ALL FLIGHTS and ADD FLIGHT 
-
-2 step request: 
-
-        1st step: 
-                
-            1. Determine the "proper" route (HTTP Method & Endpoint). 
-
-
-
-            2. Add the UI (link and/or form) that will trigger the HTTP request that matches the route.
-
-
-
-            3. Define the route in the appropriate router module that will match the HTTP request and map it to the <controller>.<method> that will perform the desired functionality.
-            4. Add the controller action/method and be sure to export it.
-            5. In the controller, perform necessary CRUD and either render (passing it data) in the case of a GET request, or redirect if data has been mutated (POST, PUT & DELETE). If rendering, code the view template if necessary.
-
-        2nd step: 
-
-            1. Determine the "proper" route (HTTP Method & Endpoint). 
-            2. Add the UI (link and/or form) that will trigger the HTTP request that matches the route.
-            3. Define the route in the appropriate router module that will match the HTTP request and map it to the <controller>.<method> that will perform the desired functionality.
-            4. Add the controller action/method and be sure to export it.
-            5. In the controller, perform necessary CRUD and either render (passing it data) in the case of a GET request, or redirect if data has been mutated (POST, PUT & DELETE). If rendering, code the view template if necessary.
 
 
 
