@@ -30,9 +30,13 @@ AAU, I want to view a list of all flights (index view) that displays each flight
 
 
     1. Determine the "proper" route (HTTP Method & Endpoint). 
+        GET /flights
     2. Add the UI (link and/or form) that will trigger the HTTP request that matches the route.
+        - From root route, add link that gets to flights/index.ejs
     3. Define the route in the appropriate router module that will match the HTTP request and map it to the <controller>.<method> that will perform the desired functionality.
+        router.get('/flights/index', ... )
     4. Add the controller action/method and be sure to export it.
+    
     5. In the controller, perform necessary CRUD and either render (passing it data) in the case of a GET request, or redirect if data has been mutated (POST, PUT & DELETE). If rendering, code the view template if necessary.
 
 

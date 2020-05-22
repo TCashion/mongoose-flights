@@ -1,0 +1,29 @@
+<%- include('../partials/header.ejs') %>
+
+
+<h1>Upcoming Flights</h1>
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Airline</th>
+        <th scope="col">Airport</th>
+        <th scope="col">Flight No.</th>
+        <th scope="col">Departure</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        <% flights.forEach(function(flight) { %>
+            <tr>
+                <td><%= flight.airline %></td>
+                <td><%= flight.airport %></td>
+                <td><%= flight.flightNo %></td>
+                <td><%= flight.departs %></td>
+            </tr>
+        <% }); %>
+
+    </tbody>
+  </table>
+
+<%- include('../partials/footer.ejs') %>
