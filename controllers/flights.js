@@ -11,10 +11,16 @@ module.exports = {
 // set up index view
 function index(req, res) {
     Flight.find({}, function(err, flights) {
+        const currentTime = new Date(); 
+        // reorder flights from oldest to newest
+        let flightOrder = flights.sort(function(a, b) {
+            return a.departs - b.departs
+        });
         res.render('flights/index', {
-            flights,
-            title: "View Flights"
-        })
+            flights: flightOrder,
+            title: "View Flights", 
+            currentTime
+        });
     });
 };
 
