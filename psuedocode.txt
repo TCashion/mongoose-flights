@@ -25,7 +25,7 @@ When we build out CRUD functionality in most web apps, here is the process we wi
 
 
 
-AAU, I want to view a list of all flights (index view) that displays each flight's airline, airport, flight no., and departure date/time.
+DONE AAU, I want to view a list of all flights (index view) that displays each flight's airline, airport, flight no., and departure date/time.
 
 
 
@@ -36,7 +36,7 @@ AAU, I want to view a list of all flights (index view) that displays each flight
     3. Define the route in the appropriate router module that will match the HTTP request and map it to the <controller>.<method> that will perform the desired functionality.
         router.get('/flights/index', ... )
     4. Add the controller action/method and be sure to export it.
-    
+
     5. In the controller, perform necessary CRUD and either render (passing it data) in the case of a GET request, or redirect if data has been mutated (POST, PUT & DELETE). If rendering, code the view template if necessary.
 
 
@@ -47,8 +47,18 @@ AAU, I want to create flights by entering the information on a page (new view) t
         1st step: 
                 
             1. Determine the "proper" route (HTTP Method & Endpoint). 
+
+                GET /flights/new
+
             2. Add the UI (link and/or form) that will trigger the HTTP request that matches the route.
+
+                link in the index view that navigates to: 
+                views/flights/new.ejs
+
             3. Define the route in the appropriate router module that will match the HTTP request and map it to the <controller>.<method> that will perform the desired functionality.
+
+                router.get('/new', flightsCtrl.new);
+
             4. Add the controller action/method and be sure to export it.
             5. In the controller, perform necessary CRUD and either render (passing it data) in the case of a GET request, or redirect if data has been mutated (POST, PUT & DELETE). If rendering, code the view template if necessary.
 
@@ -79,3 +89,25 @@ AAU, I want to be able to access each view via a navigation bar at the top of th
             3. Define the route in the appropriate router module that will match the HTTP request and map it to the <controller>.<method> that will perform the desired functionality.
             4. Add the controller action/method and be sure to export it.
             5. In the controller, perform necessary CRUD and either render (passing it data) in the case of a GET request, or redirect if data has been mutated (POST, PUT & DELETE). If rendering, code the view template if necessary.
+
+
+
+
+
+
+
+
+Mothballed time parser: 
+
+function parseDate(flight) {
+    const months = [`Jan`, `Feb`, 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const month = months[flight.departs.getMonth()];
+    const day = flight.departs.getDate();
+    const year = 1900 + flight.departs.getYear();
+    const hour = flight.departs.getHours();
+    const minute = flight.departs.getMinutes();
+    const second = flight.departs.getSeconds();
+    const parsedDate = `${month} ${day}, ${year} at ${hour}:${minute}:${second}`;
+    console.log(parsedDate)
+    return parsedDate;
+}

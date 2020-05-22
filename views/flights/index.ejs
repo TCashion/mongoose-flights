@@ -2,7 +2,7 @@
 
 
 <h1>Upcoming Flights</h1>
-
+<br>
 <table class="table table-hover">
     <thead>
       <tr>
@@ -22,8 +22,10 @@
                 <td><%= flight.departs %></td>
             </tr>
         <% }); %>
-
+    
     </tbody>
-  </table>
+</table>
+<br>
+<a class="btn btn-primary" href="/flights/new">Add New Flight</a>
 
 <%- include('../partials/footer.ejs') %>
