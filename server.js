@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-//connect to database with Mongoose
+//connect to database module
 require('./config/database');
 
 var indexRouter = require('./routes/index');
