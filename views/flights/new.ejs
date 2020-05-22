@@ -3,11 +3,11 @@
 
 <h1>Add a Flight to Your Itinerary</h1>
 <br>
-<form>
+<form action="/flights" method="POST">
   
   <div class="form-group">
     <label for="exampleFormControlSelect1">Airline</label>
-    <select class="form-control" id="exampleFormControlSelect1">
+    <select class="form-control" id="exampleFormControlSelect1" name="airline">
       <option>American</option>
       <option>Southwest</option>
       <option>United</option>
@@ -15,7 +15,7 @@
   </div>
   <div class="form-group">
     <label for="exampleFormControlSelect1">Airport (departure)</label>
-    <select class="form-control" id="exampleFormControlSelect1">
+    <select class="form-control" id="exampleFormControlSelect1" name="airport">
       <option>AUS</option>
       <option>DEN</option>
       <option>DFW</option>
@@ -25,11 +25,11 @@
   </div>
   <div class="form-group">
     <label for="exampleFormControlInput1">Flight Number</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1">
+    <input type="text" class="form-control" id="exampleFormControlInput1" name="flightNo">
   </div>
   <div class="form-group">
     <label for="exampleFormControlInput1">Date of departure</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="MM/DD/YYYY">
+    <input type="datetime-local" class="form-control" id="exampleFormControlInput1" name="departs">
   </div>
 
   <button type="submit" class="btn btn-primary">SUBMIT</button>

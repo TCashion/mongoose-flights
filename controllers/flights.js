@@ -4,7 +4,8 @@ const Flight = require('../models/flight');
 // export module
 module.exports = {
     index, 
-    new: newFlight
+    new: newFlight, 
+    create
 };
 
 // set up index view
@@ -19,6 +20,16 @@ function newFlight(req, res) {
     res.render('flights/new');
 };
 
+// create new flight data
+function create(req, res) {
+    // create the new document
+    const flight = new Flight(req.body);
+    flight.save(function(err) {
+        // returns to new form if data not valid 
+        if (err) return res.redirect('/flights/new');
+        res.redirect('/flights');
+    });
+};
 
 
 

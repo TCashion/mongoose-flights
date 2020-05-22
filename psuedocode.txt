@@ -44,7 +44,7 @@ DONE AAU, I want to view a list of all flights (index view) that displays each f
 AAU, I want to create flights by entering the information on a page (new view) that has a form and submitting it.
 
     2 step request: 
-        1st step: 
+        DONE 1st step: 
                 
             1. Determine the "proper" route (HTTP Method & Endpoint). 
 
@@ -64,11 +64,26 @@ AAU, I want to create flights by entering the information on a page (new view) t
 
         2nd step: 
 
-            1. Determine the "proper" route (HTTP Method & Endpoint). 
-            2. Add the UI (link and/or form) that will trigger the HTTP request that matches the route.
-            3. Define the route in the appropriate router module that will match the HTTP request and map it to the <controller>.<method> that will perform the desired functionality.
+            Done 1. Determine the "proper" route (HTTP Method & Endpoint). 
+
+                POST /flights
+
+            Done 2. Add the UI (link and/or form) that will trigger the HTTP request that matches the route.
+
+                submit form on new.ejs view
+
+            Done 3. Define the route in the appropriate router module that will match the HTTP request and map it to the <controller>.<method> that will perform the desired functionality.
+
+                router.post('/', flightsCtrl.create);
+
             4. Add the controller action/method and be sure to export it.
+
+                function create(... )
+
             5. In the controller, perform necessary CRUD and either render (passing it data) in the case of a GET request, or redirect if data has been mutated (POST, PUT & DELETE). If rendering, code the view template if necessary.
+
+                redirect
+
 
 AAU, I want to be able to access each view via a navigation bar at the top of the page with links to: ALL FLIGHTS and ADD FLIGHT 
 
@@ -77,7 +92,13 @@ AAU, I want to be able to access each view via a navigation bar at the top of th
         1st step: 
                 
             1. Determine the "proper" route (HTTP Method & Endpoint). 
+
+
+
             2. Add the UI (link and/or form) that will trigger the HTTP request that matches the route.
+
+
+
             3. Define the route in the appropriate router module that will match the HTTP request and map it to the <controller>.<method> that will perform the desired functionality.
             4. Add the controller action/method and be sure to export it.
             5. In the controller, perform necessary CRUD and either render (passing it data) in the case of a GET request, or redirect if data has been mutated (POST, PUT & DELETE). If rendering, code the view template if necessary.
