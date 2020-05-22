@@ -58,7 +58,7 @@ AAU, when viewing the list of flights, I want to click on a "detail" link displa
 
 
 
-4 Implement the following User Story:
+DONE 4 Implement the following User Story:
 AAU, when viewing the details page (show view) for a flight, I want to see a list of that flight's destinations (airport & arrival)
 
 
@@ -71,6 +71,27 @@ Note: Multiple destinations are possible by adding them one at a time.
 Hints:
 
 Display a form below the list of destinations.
+
+
+            1. Determine the "proper" route (HTTP Method & Endpoint). 
+
+                POST /flights/:id/destinations
+
+            2. Add the UI (link and/or form) that will trigger the HTTP request that matches the route.
+
+                form underneath details
+
+            3. Define the route in the appropriate router module that will match the HTTP request and map it to the <controller>.<method> that will perform the desired functionality.
+
+                // PICK UP HERE!!
+
+            4. Add the controller action/method and be sure to export it.
+
+
+
+            5. In the controller, perform necessary CRUD and either render (passing it data) in the case of a GET request, or redirect if data has been mutated (POST, PUT & DELETE). If rendering, code the view template if necessary.
+
+
 
 
 

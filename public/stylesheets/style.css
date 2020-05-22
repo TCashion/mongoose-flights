@@ -45,10 +45,14 @@ a {
 }
 
 .card {
-  margin: 0 auto; 
+  margin: 0 auto 15px auto; 
 }
 
 thead {
   background: var(--main-plus-one);
   color: var(--main-minus-one);
+}
+
+#add-destination {
+  margin: 15px 0;
 }
