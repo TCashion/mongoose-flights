@@ -4,8 +4,10 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>flightStatus</title>
+    <title> <%= title %> </title>
 
+    <!-- link style reset -->
+    <link rel="stylesheet" href="/stylesheets/reset.css">
     <!-- link bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!-- link stylesheet -->
@@ -13,4 +15,19 @@
 
 </head>
 <body>
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link <%= title === 'flightStatus' ? 'active' : '' %>" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <%= title === 'View Flights' ? 'active' : '' %>" href="/flights">View Flights</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <%= title === 'Add Flight' ? 'active' : '' %>" href="/flights/new">Add Flight</a>
+        </li>
+    </ul>
+
+    <section>
+    
     

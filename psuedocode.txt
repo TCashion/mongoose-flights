@@ -76,11 +76,11 @@ AAU, I want to create flights by entering the information on a page (new view) t
 
                 router.post('/', flightsCtrl.create);
 
-            4. Add the controller action/method and be sure to export it.
+            DONE 4. Add the controller action/method and be sure to export it.
 
                 function create(... )
 
-            5. In the controller, perform necessary CRUD and either render (passing it data) in the case of a GET request, or redirect if data has been mutated (POST, PUT & DELETE). If rendering, code the view template if necessary.
+            DONE 5. In the controller, perform necessary CRUD and either render (passing it data) in the case of a GET request, or redirect if data has been mutated (POST, PUT & DELETE). If rendering, code the view template if necessary.
 
                 redirect
 

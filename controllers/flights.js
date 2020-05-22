@@ -11,13 +11,18 @@ module.exports = {
 // set up index view
 function index(req, res) {
     Flight.find({}, function(err, flights) {
-        res.render('flights/index', {flights})
+        res.render('flights/index', {
+            flights,
+            title: "View Flights"
+        })
     });
 };
 
 // render new flight view
 function newFlight(req, res) {
-    res.render('flights/new');
+    res.render('flights/new', {
+        title: "Add Flight"
+    });
 };
 
 // create new flight data
