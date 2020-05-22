@@ -8,8 +8,20 @@
             <li class="spaced-li">Departure: <strong><%= flight.departs%></strong></li>
             <li class="spaced-li">Airline: <%= flight.airline%></li>
             <li class="spaced-li">Flight Number: <%= flight.flightNo%></li>
-            <li class="spaced-li">Airline: <%= flight.airport%></li>
-            <li class="spaced-li">Destination(s): <%= flight.destinations.length > 0 ? flight.destinations : 'None specified' %></li>
+            <li class="spaced-li">Airport: <%= flight.airport%></li>
+            <% if (flight.destinations.length > 0) { %>
+                <ul class="spaced-li">Destinations:
+                    <% flight.destinations.forEach(function(destination, idx) { %>                
+                        <li class="spaced-li">
+                            <%= idx + 1%>. Arrives to <strong><%= destination.destination %></strong> on <br>
+                            <%= destination.arrival %>
+                        </li>
+                    <% }); %>
+                </ul>
+            <% } else { %>
+                <li class="spaced-li">Destinations: None specified</li>
+            <% }; %>
+
         </ul>
         <a href="/flights" class="btn btn-secondary">Go Back</a>
     </div>
@@ -18,12 +30,12 @@
 <div class="card" style="width: 18rem;">
     <div class="card-body">
         <h5 class="card-title">Add Destination:</h5>
-        <form class="form-group" action="POST">
+        <form class="form-group" action="/flights/<%= flight._id %>/destinations" method="POST">
             <label for="add-airport-form">Destination airport:</label>
             <input type="text" class="form-control add-destination" id="add-airport-form" name="destination" placeholder="EX: DEN">
             <label for="add-time-form">Expected Arrival:</label>
             <input type="datetime-local" class="form-control add-destination"  id="add-time-form" name="arrival" placeholder="EX: DEN">
-            <button type="submit" class="btn btn-secondary">Submit</button>
+            <button class="btn btn-secondary" type="submit">Submit</button>
         </form>
     </div>
 </div>

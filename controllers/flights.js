@@ -46,7 +46,6 @@ function create(req, res) {
 // show details page
 function show(req, res) {
     Flight.findById(req.params.id, function(err, flight) {
-        console.log(flight)
         res.render('flights/show', {
             flight, 
             title: "Details"

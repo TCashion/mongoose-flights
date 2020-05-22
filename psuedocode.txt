@@ -64,7 +64,7 @@ AAU, when viewing the details page (show view) for a flight, I want to see a lis
 
 
 
-5 Implement the following User Story:
+DONE 5 Implement the following User Story:
 AAU, when viewing the details page (show view) for a flight, I want to be able to add a destination for that flight. Each destination, as defined by the schema above, includes an arrival date/time & one of the established airport codes._
 Note: Multiple destinations are possible by adding them one at a time.
 
@@ -83,7 +83,7 @@ Display a form below the list of destinations.
 
             3. Define the route in the appropriate router module that will match the HTTP request and map it to the <controller>.<method> that will perform the desired functionality.
 
-                // PICK UP HERE!!
+                router.post('/', )
 
             4. Add the controller action/method and be sure to export it.
 
@@ -93,7 +93,11 @@ Display a form below the list of destinations.
 
 
 
-
+// PICK UP HERE!!!
+// PICK UP HERE!!!
+// PICK UP HERE!!!
+// PICK UP HERE!!!
+// PICK UP HERE!!!
 
 
 Bonuses
