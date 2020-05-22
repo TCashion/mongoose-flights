@@ -1,0 +1,77 @@
+Creating Data is sometimes a two-request process...
+
+Just a reminder that creating data functionality might be a two-request process:
+1. First request displays a form for the user to enter the data
+2. Second request to submit the form to the server where the data is created
+
+
+The 5-step process to implementing CRUD functionality
+
+When we build out CRUD functionality in most web apps, here is the process we will repeat over and over again:
+
+1. Determine the "proper" route (HTTP Method & Endpoint). Use RESTful conventions whenever possible.https://gist.github.com/jim-clark/17908763db7bd3c403e6
+2. Add the UI (link and/or form) that will trigger the HTTP request that matches the route.
+3. Define the route in the appropriate router module that will match the HTTP request and map it to the <controller>.<method> that will perform the desired functionality.
+4. Add the controller action/method and be sure to export it.
+5. In the controller, perform necessary CRUD and either render (passing it data) in the case of a GET request, or redirect if data has been mutated (POST, PUT & DELETE). If rendering, code the view template if necessary.
+
+
+
+
+
+
+
+
+
+
+
+AAU, I want to view a list of all flights (index view) that displays each flight's airline, airport, flight no., and departure date/time.
+
+
+
+    1. Determine the "proper" route (HTTP Method & Endpoint). 
+    2. Add the UI (link and/or form) that will trigger the HTTP request that matches the route.
+    3. Define the route in the appropriate router module that will match the HTTP request and map it to the <controller>.<method> that will perform the desired functionality.
+    4. Add the controller action/method and be sure to export it.
+    5. In the controller, perform necessary CRUD and either render (passing it data) in the case of a GET request, or redirect if data has been mutated (POST, PUT & DELETE). If rendering, code the view template if necessary.
+
+
+
+AAU, I want to create flights by entering the information on a page (new view) that has a form and submitting it.
+
+    2 step request: 
+        1st step: 
+                
+            1. Determine the "proper" route (HTTP Method & Endpoint). 
+            2. Add the UI (link and/or form) that will trigger the HTTP request that matches the route.
+            3. Define the route in the appropriate router module that will match the HTTP request and map it to the <controller>.<method> that will perform the desired functionality.
+            4. Add the controller action/method and be sure to export it.
+            5. In the controller, perform necessary CRUD and either render (passing it data) in the case of a GET request, or redirect if data has been mutated (POST, PUT & DELETE). If rendering, code the view template if necessary.
+
+        2nd step: 
+
+            1. Determine the "proper" route (HTTP Method & Endpoint). 
+            2. Add the UI (link and/or form) that will trigger the HTTP request that matches the route.
+            3. Define the route in the appropriate router module that will match the HTTP request and map it to the <controller>.<method> that will perform the desired functionality.
+            4. Add the controller action/method and be sure to export it.
+            5. In the controller, perform necessary CRUD and either render (passing it data) in the case of a GET request, or redirect if data has been mutated (POST, PUT & DELETE). If rendering, code the view template if necessary.
+
+AAU, I want to be able to access each view via a navigation bar at the top of the page with links to: ALL FLIGHTS and ADD FLIGHT 
+
+2 step request: 
+
+        1st step: 
+                
+            1. Determine the "proper" route (HTTP Method & Endpoint). 
+            2. Add the UI (link and/or form) that will trigger the HTTP request that matches the route.
+            3. Define the route in the appropriate router module that will match the HTTP request and map it to the <controller>.<method> that will perform the desired functionality.
+            4. Add the controller action/method and be sure to export it.
+            5. In the controller, perform necessary CRUD and either render (passing it data) in the case of a GET request, or redirect if data has been mutated (POST, PUT & DELETE). If rendering, code the view template if necessary.
+
+        2nd step: 
+
+            1. Determine the "proper" route (HTTP Method & Endpoint). 
+            2. Add the UI (link and/or form) that will trigger the HTTP request that matches the route.
+            3. Define the route in the appropriate router module that will match the HTTP request and map it to the <controller>.<method> that will perform the desired functionality.
+            4. Add the controller action/method and be sure to export it.
+            5. In the controller, perform necessary CRUD and either render (passing it data) in the case of a GET request, or redirect if data has been mutated (POST, PUT & DELETE). If rendering, code the view template if necessary.
