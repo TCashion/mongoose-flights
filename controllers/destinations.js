@@ -3,7 +3,8 @@ const Flight = require('../models/flight');
 
 // export module
 module.exports = {
-    create
+    create, 
+    delete: deleteOne
 };
 
 // create a new destination data and add it to parent flight
@@ -19,4 +20,8 @@ function create(req, res) {
             res.redirect(`/flights/${flight._id}`);
         });
     });
+};
+
+function deleteOne(req, res) {
+    res.send("delete a destination");
 };

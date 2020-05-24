@@ -46,10 +46,14 @@
             </thead>
             <tbody>
                 <% flight.destinations.forEach(function(destination, idx) { %>
+                    <% console.log(destination) %>
                     <tr>
                         <th scope="row"><%= idx + 1 %></th>
                         <td><%= destination.destination %></td>
                         <td><%= destination.arrival %></td>
+                        <td>
+                            <a href="<%= flight._id%>/destinations/<%= destination._id %>" class="btn btn-secondary">DELETE</a>
+                        </td>
                     </tr>
                 <% }); %>
             </tbody>
