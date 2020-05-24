@@ -56,3 +56,16 @@ thead {
 .add-destination {
   margin: 5px 0 15px 0;
 }
+
+.destinations-table-heading {
+  margin: 30px auto 15px auto;
+}
+
+.destinations-table > thead {
+  background: transparent;
+  color: black; 
+}
+
+.destinations-table-container {
+  padding: 0 25%; 
+}

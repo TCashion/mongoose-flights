@@ -9,19 +9,6 @@
             <li class="spaced-li">Airline: <%= flight.airline%></li>
             <li class="spaced-li">Flight Number: <%= flight.flightNo%></li>
             <li class="spaced-li">Airport: <%= flight.airport%></li>
-            <% if (flight.destinations.length > 0) { %>
-                <ul class="spaced-li">Destinations:
-                    <% flight.destinations.forEach(function(destination, idx) { %>                
-                        <li class="spaced-li">
-                            <%= idx + 1%>. Arrives to <strong><%= destination.destination %></strong> on <br>
-                            <%= destination.arrival %>
-                        </li>
-                    <% }); %>
-                </ul>
-            <% } else { %>
-                <li class="spaced-li">Destinations: None specified</li>
-            <% }; %>
-
         </ul>
         <a href="/flights" class="btn btn-secondary">Go Back</a>
     </div>
@@ -32,7 +19,7 @@
         <h5 class="card-title">Add Destination:</h5>
         <form class="form-group" action="/flights/<%= flight._id %>/destinations" method="POST">
             <label for="add-airport-form">Destination airport:</label>
-            <select class="form-control" id="add-airport-form" name="airport">
+            <select class="form-control" id="add-airport-form" name="destination">
                 <option>AUS</option>
                 <option>DEN</option>
                 <option>DFW</option>
@@ -45,5 +32,35 @@
         </form>
     </div>
 </div>
+
+<div class="destinations-table-container">
+    <% if (flight.destinations.length > 0) { %>
+        <h5 class="destinations-table-heading">Destinations: </h5>
+        <table class="table destinations-table">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Airport</th>
+                <th scope="col">Estimated Arrival</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% flight.destinations.forEach(function(destination, idx) { %>
+                <% console.log(flight.destinations) %>
+                    <tr>
+                        <th scope="row"><%= idx + 1 %></th>
+                        <td><%= destination.destination %></td>
+                        <td><%= destination.arrival %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+
+
+    <% } else { %>
+        <h5>Destinations: None specified</h5>
+    <% }; %>
+</div>
+
 
 <%- include('../partials/footer.ejs') %>
