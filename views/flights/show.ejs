@@ -32,7 +32,13 @@
         <h5 class="card-title">Add Destination:</h5>
         <form class="form-group" action="/flights/<%= flight._id %>/destinations" method="POST">
             <label for="add-airport-form">Destination airport:</label>
-            <input type="text" class="form-control add-destination" id="add-airport-form" name="destination" placeholder="EX: DEN">
+            <select class="form-control" id="add-airport-form" name="airport">
+                <option>AUS</option>
+                <option>DEN</option>
+                <option>DFW</option>
+                <option>LAX</option>
+                <option>SAN</option>
+              </select>
             <label for="add-time-form">Expected Arrival:</label>
             <input type="datetime-local" class="form-control add-destination"  id="add-time-form" name="arrival" placeholder="EX: DEN">
             <button class="btn btn-secondary" type="submit">Submit</button>
