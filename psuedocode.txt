@@ -93,18 +93,25 @@ Display a form below the list of destinations.
 
 
 
-// PICK UP HERE!!!
-// PICK UP HERE!!!
-// PICK UP HERE!!!
-// PICK UP HERE!!!
-// PICK UP HERE!!!
 
 
 Bonuses
 6 Sort the list of destinations for a flight by the arrival date/time in ascending order.
 
+    // manipulate the data being sent to the show page
+    // same as index view sorting
+
 7 Implement the following User Story:
 AAU, when viewing the details page (show view) for a flight, I want to be able to delete any current destination for that flight.
+
+    1. Determine the "proper" route (HTTP Method & Endpoint). Use RESTful conventions whenever possible.https://gist.github.com/jim-clark/17908763db7bd3c403e6
+
+        
+
+    2. Add the UI (link and/or form) that will trigger the HTTP request that matches the route.
+    3. Define the route in the appropriate router module that will match the HTTP request and map it to the <controller>.<method> that will perform the desired functionality.
+    4. Add the controller action/method and be sure to export it.
+    5. In the controller, perform necessary CRUD and either render (passing it data) in the case of a GET request, or redirect if data has been mutated (POST, PUT & DELETE). If rendering, code the view template if necessary.
 
  8 When adding a destination for a flight, exclude the airports listed in the <select> that have already been used by other destinations and/or the flight's airport.
 

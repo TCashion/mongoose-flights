@@ -14,11 +14,12 @@ function index(req, res) {
     Flight.find({}, function(err, flights) {
         const currentTime = new Date(); 
         // reorder flights from oldest to newest
-        let flightOrder = flights.sort(function(a, b) {
+        flights.sort(function(a, b) {
             return a.departs - b.departs
         });
         res.render('flights/index', {
-            flights: flightOrder,
+            flights,
+            // flights: flightOrder,
             title: "View Flights", 
             currentTime
         });
@@ -46,6 +47,10 @@ function create(req, res) {
 // show details page
 function show(req, res) {
     Flight.findById(req.params.id, function(err, flight) {
+        // sort arrival times in ascending order
+        flight.destinations.sort(function(a, b) {
+            return a.arrival - b.arrival;
+        });
         res.render('flights/show', {
             flight, 
             title: "Details"
