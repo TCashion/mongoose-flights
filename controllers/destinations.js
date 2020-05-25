@@ -22,6 +22,12 @@ function create(req, res) {
     });
 };
 
-function deleteOne(req, res) {
-    res.send("delete a destination");
+function deleteOne(req, res) { 
+    Flight.findOne({"destinations._id" : req.params.id}, function(err, flight) {
+        flight.destinations.id(req.params.id).remove();
+        flight.save(function(err) {
+            // if (err) res.redirect(`/flights/${flight._id}`);
+            res.redirect(`/flights/${flight._id}`);
+        });
+    });
 };
