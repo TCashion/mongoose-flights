@@ -6,7 +6,8 @@ module.exports = {
     index, 
     new: newFlight, 
     create, 
-    show
+    show, 
+    delete: deleteFlight
 };
 
 // set up index view
@@ -55,5 +56,12 @@ function show(req, res) {
             flight, 
             title: "Details"
         });
+    });
+};
+
+// delete a flight
+function deleteFlight(req, res) {
+    Flight.deleteOne({ _id: req.params.id}, function(err) {
+        res.redirect('/flights');
     });
 };
