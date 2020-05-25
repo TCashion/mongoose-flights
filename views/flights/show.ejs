@@ -1,5 +1,9 @@
 <%- include('../partials/header.ejs') %>
 
+<a href="/flights" class="btn btn-secondary">Go Back</a>
+
+
+
 <div class="card" style="width: 18rem;">
     <div class="card-body">
         <h5 class="card-title">Flight Details</h5>
@@ -10,7 +14,6 @@
             <li class="spaced-li">Flight Number: <%= flight.flightNo%></li>
             <li class="spaced-li">Airport: <%= flight.airport%></li>
         </ul>
-        <a href="/flights" class="btn btn-secondary">Go Back</a>
     </div>
 </div>
 
@@ -20,11 +23,18 @@
         <form class="form-group" action="/flights/<%= flight._id %>/destinations" method="POST">
             <label for="add-airport-form">Destination airport:</label>
             <select class="form-control" id="add-airport-form" name="destination">
-                <option>AUS</option>
-                <option>DEN</option>
-                <option>DFW</option>
-                <option>LAX</option>
-                <option>SAN</option>
+                <!-- only allow selection of unused destinations -->
+                <% const destinationsArr = ['AUS','DFW','DEN','LAX','SAN']; %>
+                <% const usedDestinations = [flight.airport]; %>
+                <% flight.destinations.forEach(function(destination) { %>
+                    <% usedDestinations.push(destination.destination); %>
+                <% }); %>
+
+                <% destinationsArr.forEach(function(destination) { %>
+                    <% if (!usedDestinations.includes(destination)) { %>
+                        <option><%= destination %></option>
+                    <% }; %>
+                <% }); %>
               </select>
             <label for="add-time-form">Expected Arrival:</label>
             <input type="datetime-local" class="form-control add-destination"  id="add-time-form" name="arrival" placeholder="EX: DEN">
