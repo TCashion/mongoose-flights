@@ -1,5 +1,7 @@
-// require the flights database
+// require the flights model
 const Flight = require('../models/flight');
+// require the tickets model
+const Ticket = require('../models/ticket');
 
 // export module
 module.exports = {
@@ -48,6 +50,10 @@ function create(req, res) {
 // show details page
 function show(req, res) {
     Flight.findById(req.params.id, function(err, flight) {
+        // query for the associated tickets
+        Ticket.find({flight: flight._id}, function(err, tickets) {
+            
+        });
         // sort arrival times in ascending order
         flight.destinations.sort(function(a, b) {
             return a.arrival - b.arrival;

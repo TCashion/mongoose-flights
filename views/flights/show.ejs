@@ -17,6 +17,28 @@
     </div>
 </div>
 
+<div class="show-view-table-container">
+    <% if (flight.destinations.length > 0) { %>
+        <h5 class="show-view-table-heading">Tickets: </h5>
+        <table class="table show-view-table">
+            <thead>
+                <tr>
+                <th scope="col">Seat</th>
+                <th scope="col">Price</th>
+                <th scope="col">Flight</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+
+
+    <% } else { %>
+        <h5>No ticket added yet</h5>
+    <% }; %>
+</div>
+
 <div class="card" style="width: 18rem;">
     <div class="card-body">
         <h5 class="card-title">Add Destination:</h5>
@@ -43,10 +65,10 @@
     </div>
 </div>
 
-<div class="destinations-table-container">
+<div class="show-view-table-container">
     <% if (flight.destinations.length > 0) { %>
-        <h5 class="destinations-table-heading">Destinations: </h5>
-        <table class="table destinations-table">
+        <h5 class="show-view-table-heading">Destinations: </h5>
+        <table class="table show-view-table">
             <thead>
                 <tr>
                 <th scope="col">#</th>
