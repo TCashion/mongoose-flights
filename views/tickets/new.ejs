@@ -4,7 +4,7 @@
 <br>
 <p>for flight <strong><%= flight.flightNo%></strong> out of <strong><%= flight.airport%></strong></p>
 <br>
-<form action="/flights" method="POST">
+<form action="/flights/<%= flight._id %>/tickets" method="POST">
   
   <div class="form-group">
     <label for="select-seat">Seat</label>

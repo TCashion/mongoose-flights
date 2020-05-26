@@ -5,7 +5,8 @@ const Ticket = require('../models/ticket');
 
 // export module 
 module.exports = {
-    new: newTicket
+    new: newTicket, 
+    create
 };
 
 function newTicket(req, res) {
@@ -15,5 +16,13 @@ function newTicket(req, res) {
             title: "New Ticket", 
             flight: currentFlight
         });
+    });
+};
+
+function create(req, res) {
+    const flightId = req.params.flightId
+    req.body.flight=flightId;
+    Ticket.create(req.body, function(err, ticket) {
+        res.redirect(`/flights/${flightId}`)
     });
 };
