@@ -27,7 +27,7 @@ const flightSchema = new Schema({
         required: true
     },
     flightNo: {
-        type: Number, 
+        type: Number,
         min: 10,
         max: 9999, 
         required: true
