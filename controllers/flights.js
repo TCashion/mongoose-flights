@@ -50,19 +50,17 @@ function create(req, res) {
 // show details page
 function show(req, res) {
     Flight.findById(req.params.id, function(err, flight) {
-        // query for the associated tickets
-        let ticketsArr = [];
-        Ticket.find({flight: flight._id}, function(err, tickets) {
-            ticketsArr = tickets;
-        });
         // sort arrival times in ascending order
         flight.destinations.sort(function(a, b) {
             return a.arrival - b.arrival;
         });
-        res.render('flights/show', {
-            flight, 
-            title: "Details", 
-            tickets: ticketsArr
+        // query for the associated tickets
+        Ticket.find({flight: flight._id}, function(err, tickets) {
+            res.render('flights/show', {
+                flight, 
+                title: "Details", 
+                tickets
+            });
         });
     });
 };
