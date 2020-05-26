@@ -51,8 +51,9 @@ function create(req, res) {
 function show(req, res) {
     Flight.findById(req.params.id, function(err, flight) {
         // query for the associated tickets
+        let ticketsArr = [];
         Ticket.find({flight: flight._id}, function(err, tickets) {
-            
+            ticketsArr = tickets;
         });
         // sort arrival times in ascending order
         flight.destinations.sort(function(a, b) {
@@ -60,7 +61,8 @@ function show(req, res) {
         });
         res.render('flights/show', {
             flight, 
-            title: "Details"
+            title: "Details", 
+            tickets: ticketsArr
         });
     });
 };

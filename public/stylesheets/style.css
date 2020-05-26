@@ -45,7 +45,7 @@ a {
 }
 
 .card {
-  margin: 0 auto 15px auto; 
+  margin: 0 auto 30px auto; 
 }
 
 thead {
@@ -68,4 +68,5 @@ thead {
 
 .show-view-table-container {
   padding: 0 25%; 
+  margin-bottom: 30px;
 }

@@ -18,7 +18,8 @@
 </div>
 
 <div class="show-view-table-container">
-    <% if (flight.destinations.length > 0) { %>
+    <% console.log(tickets) %>
+    <% if (tickets.length > 0) { %>
         <h5 class="show-view-table-heading">Tickets: </h5>
         <table class="table show-view-table">
             <thead>
@@ -35,7 +36,8 @@
 
 
     <% } else { %>
-        <h5>No ticket added yet</h5>
+        <h5 style="display: inline">No tickets yet</h5>
+        <a href="" class="btn btn-secondary" style="float: right">Add Ticket</a>
     <% }; %>
 </div>
 
