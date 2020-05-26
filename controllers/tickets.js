@@ -9,5 +9,11 @@ module.exports = {
 };
 
 function newTicket(req, res) {
-    res.send('New Ticket');
+    Flight.findById(req.params.id, function (err, flight) {
+        const currentFlight = flight; 
+        res.render('tickets/new', {
+            title: "New Ticket", 
+            flight: currentFlight
+        });
+    });
 };
