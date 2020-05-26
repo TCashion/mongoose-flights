@@ -7,32 +7,14 @@
 <form action="/flights" method="POST">
   
   <div class="form-group">
-    <label for="select-airline">Airline</label>
-    <select class="form-control" id="select-airline" name="airline">
-      <option>American</option>
-      <option>Southwest</option>
-      <option>United</option>
-    </select>
+    <label for="select-seat">Seat</label>
+    <input type="text" class="form-control" id="select-seat" name="seat" placeholder="ex: B19">
   </div>
   <div class="form-group">
-    <label for="select-airport">Airport (departure)</label>
-    <select class="form-control" id="select-airport" name="airport">
-      <option>AUS</option>
-      <option>DEN</option>
-      <option>DFW</option>
-      <option>LAX</option>
-      <option>SAN</option>
-    </select>
+    <label for="select-price">Price</label>
+    <input type="number" class="form-control" id="select-price" name="price" placeholder="ex: $0.00">
   </div>
-  <div class="form-group">
-    <label for="flight-number">Flight Number</label>
-    <input type="text" class="form-control" id="flight-number" name="flightNo">
-  </div>
-  <div class="form-group">
-    <label for="date-of-departure">Date of departure</label>
-    <input type="datetime-local" class="form-control" id="date-of-departure" name="departs">
-  </div>
-
+  
   <button type="submit" class="btn btn-primary">SUBMIT</button>
 
 </form>

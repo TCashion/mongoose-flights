@@ -11,7 +11,7 @@
 
 
     requests: 
-        first is to get the new ticket form page
+        DONE first is to get the new ticket form page
 
             1. Determine the "proper" route (HTTP Method & Endpoint). 
 
@@ -31,6 +31,8 @@
                 // create controller for tickets 
 
             5. In the controller, perform necessary CRUD and either render (passing it data) in the case of a GET request, or redirect if data has been mutated (POST, PUT & DELETE). If rendering, code the view template if necessary.
+
+
 
 
         second is to post the data and redirect back to show view 
